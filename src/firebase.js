@@ -5,6 +5,7 @@ import "firebase/storage";
 
 var firebaseConfig = {
     apiKey: "AIzaSyAgIZWEa-RLjZOiqdruRwPgpK91wNAHDhw",
+    databaseURL : "ooad-react-firebase-chatapp-default-rtdb.firebaseio.com",
     authDomain: "ooad-react-firebase-chatapp.firebaseapp.com",
     projectId: "ooad-react-firebase-chatapp",
     storageBucket: "ooad-react-firebase-chatapp.appspot.com",

@@ -10,6 +10,7 @@ import {
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import firebase from "../../firebase";
+import md5 from 'md5';
 class Register extends Component {
   state = {
     username: "",
@@ -18,6 +19,7 @@ class Register extends Component {
     passwordConfirmation: "",
     errors: [],
     loading: false,
+    usersRef : firebase.database().ref("users")
   };
 
   handleChange = (event) => {
@@ -26,8 +28,11 @@ class Register extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    event.target.reset();
+ 
 
     if (this.isFormValid()) {
+        
       this.setState({ errors: [], loading: true });
       event.preventDefault();
       firebase
@@ -35,9 +40,25 @@ class Register extends Component {
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((createdUser) => {
           console.log(createdUser);
-          this.setState({ loading: false });
+          createdUser.user.updateProfile(
+              {
+                  displayName : createdUser.user.username,
+                  pictureURL : `http://gavatar.com/avatar/${md5(createdUser.user.email)}?d=identicon`
+              }
+          )
+          .then(()=> {
+              this.saveUser(createdUser).then(()=> {
+                  console.log('user saved');
+                  this.setState( {loading : false});
+          });
+          })
+          .catch(err => {
+              console.error(err);
+              this.setState({errors : this.state.errors.concat(err) , loading : false})
+          })
         })
-        .catch((err) => {
+         .catch(err => { 
+            this.setState({ })
           console.error(err);
           this.setState({
             loading: false,
@@ -45,7 +66,16 @@ class Register extends Component {
           });
         });
     }
-  };
+}
+
+saveUser = createdUser => {
+
+    return this.state.usersRef.child(createdUser.user.uid).set({
+        name : createdUser.user.displayName,
+        avatar : createdUser.user.photoURL
+    })
+
+}
 
   isFormValid = () => {
     let errors = [];
@@ -90,6 +120,9 @@ class Register extends Component {
         ? 'error' : ''
     }
 
+
+
+
   render() {
     const {
       username,
@@ -118,7 +151,7 @@ class Register extends Component {
                 onChange={this.handleChange}
                 className = {this.handleInputError(errors , username)}
                 type="text"
-                value={username}
+              
               />
               <Form.Input
                 fluid
@@ -130,7 +163,7 @@ class Register extends Component {
 
                 onChange={this.handleChange}
                 type="text"
-                value={email}
+               
               />
               <Form.Input
                 fluid
@@ -142,7 +175,7 @@ class Register extends Component {
                 className = {this.handleInputError(errors , password)}
 
                 type="password"
-                value={password}
+              
               />
               <Form.Input
                 fluid
@@ -153,7 +186,7 @@ class Register extends Component {
                 onChange={this.handleChange}
                 className = {this.handleInputError(errors , passwordConfirmation)}
                 type="password"
-                value={passwordConfirmation}
+               
               />
               <Button
                 disabled={loading}
