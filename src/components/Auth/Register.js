@@ -9,6 +9,7 @@ class Register extends Component {
         email : '', 
         password : '',
         passwordConfirmation : '',
+        errors : []
     };
     
     handleChange = event => {
@@ -18,6 +19,8 @@ class Register extends Component {
     }
 
     handleSubmit = event =>{
+
+        if(this.isFormValid()){
         event.preventDefault();
         firebase
             .auth()
@@ -28,14 +31,60 @@ class Register extends Component {
             .catch(err => {
                 console.error(err);
             })
-
+        }
 
 
          
     }
 
+    isFormValid = () =>{
+
+        let errors = [];
+        let error;
+        if(this.isFormEmpty(this.state)){
+            error = {message : " Fill all the details"};
+            this.setState({errors : errors.concat(error)});
+            return false;
+            
+        }
+        else if(!this.isPasswordValid(this.state)){
+            error = {message : " Password is invalid"};
+            this.setState({errors : errors.concat(error)});
+            return false;
+
+
+        }
+        
+        else{ 
+            return true;
+        }
+    }
+
+    isFormEmpty = ({username , email , password ,passwordConfirmation}) =>{
+
+        return !username.length || !email.length || !password.length || !passwordConfirmation.length;
+
+
+    
+    }
+
+    isPasswordValid = ({password , passwordConfirmation}) => {
+        if(password.length < 6 || passwordConfirmation.length < 6){
+            return false;
+        }
+        else if(password!== passwordConfirmation){
+            return false;
+        }
+        else{
+            return true;
+        }
+
+    }
+
+    displayErros = errors => errors.map((error , index) => <p key={index}>{error.message}</p>)
+
     render(){
-        const {username , email , password , passwordConfirmation} = this.state;
+        const {username , email , password , passwordConfirmation , errors} = this.state;
 
 
          return (
@@ -60,6 +109,14 @@ class Register extends Component {
                         </Segment>
 
                     </Form>
+                    {
+                        this.state.errors.length > 0 &&  ( 
+                            <Message error>
+                                <h3>Error</h3>
+                                {this.displayErros(errors)}
+                            </Message>
+                        )
+                    }
                     <Message>Already an User? <Link to="/login">Login</Link></Message>
                     
                 </Grid.Column>
