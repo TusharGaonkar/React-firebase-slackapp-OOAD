@@ -21,7 +21,8 @@ Build with:
 * [React Redux](https://reactjs.org/) - A JavaScript library for building user interfaces
 * [node.js](https://nodejs.org/en/download/) - evented I/O for the backend
 * [Semantic -ui](https://semantic-ui.com/) : development framework that helps create beautiful, responsive layouts using human-friendly HTML.
-* [Firebase](https://breakdance.github.io/breakdance/) - HTML to Markdown converter
+* [Firebase](https://breakdance.github.io/breakdance/) - Backed by Google and loved by app development
+teams - from startups to global enterprises
 
 
 ### Installation :triangular_flag_on_post:
