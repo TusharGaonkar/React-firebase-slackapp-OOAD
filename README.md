@@ -13,6 +13,7 @@ Team Members:
 
 
 ### Slack App with React&Firebase
+Deployed@ [React-firebase-slackapp](https://ooad-react-firebase-chatapp.web.app/login)
 
 A Full fledged Slack App with Public Channles , Direct  Messages , Media Sharing.
 Build with:
