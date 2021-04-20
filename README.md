@@ -36,6 +36,13 @@ $ cd ./React-firebase-slackapp-OOAD
 $ npm install 
 $ npm start 
 ```
+### Deployment 	:anger:
+```sh
+$ npm build 
+$firebase login
+$firebase init 
+$firebase deploy
+```
 ### Project Structure :twisted_rightwards_arrows:
 ```sh
 public
