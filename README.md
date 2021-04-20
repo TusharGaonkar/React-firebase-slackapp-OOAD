@@ -37,8 +37,51 @@ $ npm start
 ```
 ### Project Structure 
 ```sh
-$ 
+public
+   |-- favicon.ico
+   |-- index.html
+   |-- manifest.json
+src
+   |-- App.test.js
+   |-- Spinner.js
+   |-- actions
+   |   |-- index.js
+   |   |-- types.js
+   |-- components
+   |   |-- App.css
+   |   |-- App.js
+   |   |-- Auth
+   |   |   |-- Login.js
+   |   |   |-- Register.js
+   |   |-- ColorPanel
+   |   |   |-- ColorPanel.js
+   |   |-- Messages
+   |   |   |-- FileModal.js
+   |   |   |-- Message.js
+   |   |   |-- MessageForm.js
+   |   |   |-- Messages.js
+   |   |   |-- MessagesHeader.js
+   |   |   |-- ProgressBar.js
+   |   |   |-- Skeleton.js
+   |   |   |-- Typing.js
+   |   |-- MetaPanel
+   |   |   |-- MetaPanel.js
+   |   |-- SidePanel
+   |   |   |-- Channels.js
+   |   |   |-- DirectMessages.js
+   |   |   |-- SidePanel.js
+   |   |   |-- Starred.js
+   |   |   |-- UserPanel.js
+   |-- firebase.js
+   |-- index.js
+   |-- reducers
+   |   |-- index.js
+   |-- registerServiceWorker.js
+
+
+
 ```
+
 
 
 
@@ -52,7 +95,7 @@ Swicth to to development branch to send the changes
 
 
 ```sh
-$ git branch development 
+$ git checkout development 
 ```
 
 
