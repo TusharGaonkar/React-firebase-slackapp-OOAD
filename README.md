@@ -92,7 +92,7 @@ Want to contribute? Great!
 
 
 
-Swicth to to development branch to send the changes 
+Switch to to development branch to send the changes 
 
 
 ```sh
