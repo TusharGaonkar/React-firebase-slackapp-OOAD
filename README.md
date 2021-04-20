@@ -18,8 +18,7 @@ A Full fledged Slack App with Public Channles , Direct  Messages , Media Sharing
 Build with:
 
 * [React Redux](https://reactjs.org/) - A JavaScript library for building user interfaces
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
+* [node.js](https://nodejs.org/en/download/) - evented I/O for the backend
 * [Semantic -ui](https://semantic-ui.com/) : development framework that helps create beautiful, responsive layouts using human-friendly HTML.
 * [Firebase](https://breakdance.github.io/breakdance/) - HTML to Markdown converter
 
@@ -35,6 +34,10 @@ $ git clone https://github.com/TusharGaonkar/React-firebase-slackapp-OOAD-.git
 $ cd ./React-firebase-slackapp-OOAD
 $ npm install 
 $ npm start 
+```
+### Project Structure 
+```sh
+$ 
 ```
 
 
