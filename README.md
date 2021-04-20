@@ -12,10 +12,10 @@ Team Members:
 > Mehul Raj - SEM 6
 
 
-### Slack App with React&Firebase
-Deployed@ [React-firebase-slackapp](https://ooad-react-firebase-chatapp.web.app/login)
+###  Slack App with React&Firebase 
+Deployed :globe_with_meridians:[React-firebase-slackapp](https://ooad-react-firebase-chatapp.web.app/login)
 
-A Full fledged Slack App with Public Channles , Direct  Messages , Media Sharing.
+A Full fledged Slack App 	:speech_balloon: with Public Channles , Direct  Messages , Media Sharing.
 Build with:
 
 * [React Redux](https://reactjs.org/) - A JavaScript library for building user interfaces
@@ -24,7 +24,7 @@ Build with:
 * [Firebase](https://breakdance.github.io/breakdance/) - HTML to Markdown converter
 
 
-### Installation
+### Installation :triangular_flag_on_post:
 
  Slack App with React&Firebase requires [Node.js](https://nodejs.org/) v4+ and npm to run.
 
@@ -36,7 +36,7 @@ $ cd ./React-firebase-slackapp-OOAD
 $ npm install 
 $ npm start 
 ```
-### Project Structure 
+### Project Structure :twisted_rightwards_arrows:
 ```sh
 public
    |-- favicon.ico
@@ -86,7 +86,7 @@ src
 
 
 
-### Development
+### Development :soccer:
 
 Want to contribute? Great!
 
@@ -102,7 +102,7 @@ $ git checkout development
 
 
 
-### Todos
+### Todos 💡 
 
  - Imporve UI 
  
